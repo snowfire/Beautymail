@@ -13,6 +13,9 @@ There are tons of great looking HTML email templates out there. Campaign Monitor
 
 The first included templates is __Widgets__ by [Campaign Monitor](https://www.campaignmonitor.com/templates/all/).
 
+![Widget Template](screenshots/widgets.png?raw=true "Widgets template")
+
+
 ## Installation
 
 Beautymail requires [Laravel Email Inliner](https://github.com/emilsundberg/inliner) to make it fun to work with HTML emails.
