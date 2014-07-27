@@ -22,7 +22,7 @@ Beautymail requires [Laravel Email Inliner](https://github.com/emilsundberg/inli
 
 Edit your `composer.php` and add:
 
-    "Snowfire/Beautymailer": "snowfire/beautymail": "1.*"
+    "snowfire/beautymail": "1.*"
 
 Edit your `app.php` and add a new Service Provider:
 

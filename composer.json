@@ -10,12 +10,12 @@
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "4.*",
-        "emil/inliner": "dev-master"
+        "emil/inliner": "1.*"
     },
     "autoload": {
         "psr-0": {
             "Snowfire\\Beautymail\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
