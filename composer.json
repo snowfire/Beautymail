@@ -1,0 +1,24 @@
+{
+    "name": "snowfire/beautymail",
+    "description": "",
+    "authors": [
+        {
+            "name": "Emil Sundberg",
+            "email": "emil@snowfire.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.*",
+        "emil/inliner": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Snowfire\\Beautymail\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
