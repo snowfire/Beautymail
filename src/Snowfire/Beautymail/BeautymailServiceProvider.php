@@ -18,6 +18,8 @@ class BeautymailServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
+		$this->app->register('Emil\Inliner\InlinerServiceProvider');
+
 		$this->package('snowfire/beautymail');
 	}
 
@@ -28,17 +30,6 @@ class BeautymailServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-//		$this->app->bindShared('Snowfire\Checkout\BillableRepositoryInterface', function()
-//		{
-//			return new BillableEloquent;
-//		});
-//
-//		$this->app->bindShared('command.checkout.table', function($app)
-//		{
-//			return new CheckoutTableCommand;
-//		});
-//
-//		$this->commands('command.checkout.table');
 	}
 
 	/**

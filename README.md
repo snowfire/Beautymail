@@ -1,6 +1,6 @@
 # Beautymail for Laravel
 
-Beautymail makes it super easy to send beatiful HTML emails. It's made for things like:
+Beautymail makes it super easy to send beatiful responsive HTML emails. It's made for things like:
 
 * Welcome emails
 * Password reminders
@@ -9,12 +9,15 @@ Beautymail makes it super easy to send beatiful HTML emails. It's made for thing
 
 ## Templates
 
-There are tons of great looking HTML email templates out there. Campaign Monitor and Mailchimp has released hundres for free. It is pretty simple to adapt a template to Beautymail. If you do, please send a PR.
+There are tons of great looking HTML email templates out there. Campaign Monitor and Mailchimp has released hundreds for free. It is pretty simple to adapt a template to Beautymail. If you do, please send a PR.
 
-The first included templates is __Widgets__ by [Campaign Monitor](https://www.campaignmonitor.com/templates/all/).
+__Widgets__ by [Campaign Monitor](https://www.campaignmonitor.com/templates/all/):
 
 ![Widget Template](screenshots/widgets.png?raw=true "Widgets template")
 
+__Ark__ by __Me__:
+
+![Widget Template](screenshots/ark.png?raw=true "Widgets template")
 
 ## Installation
 
@@ -26,7 +29,7 @@ Edit your `composer.php` and add:
 
 Edit your `app.php` and add a new Service Provider:
 
-    'Emil\Inliner\InlinerServiceProvider'
+    'Snowfire\Beautymail\BeautymailServiceProvider'
 
 Publish assets to your public folder
 
@@ -37,7 +40,7 @@ Publish assets to your public folder
 Add this to your `routes.php`
 
 ```php
-Route::get('/testmail', function()
+Route::get('/test', function()
 {
 	$data = [
 		'senderName' => 'ABC Widget', // Company name
@@ -88,11 +91,13 @@ That's it! If you have troubles sending emails, have a look at [Laravel Email In
 
 ## Options
 
-### _Template:_ Widget
+### _Template:_ Widgets
 
 Required in `$data`. Please note that you have to pass all variables, but it is okay to set them to null to hide data.
 
 * senderName - __required__
+* logo['width'] - __required__
+* logo['height'] - __required__
 * reminder
 * unsubscribe
 * address
@@ -104,4 +109,51 @@ To change colours for the different segments, pass a colour variable:
 
 ```php
 @include('beautymail::templates.widgets.articleStart', ['color' => '#0000FF'])
+```
+
+
+### _Template:_ Ark
+
+Required in `$data`. Please note that you have to pass all variables, but it is okay to set them to null to hide data.
+
+* senderName - __required__
+* logo['width'] - __required__
+* logo['height'] - __required__
+* reminder
+* twitter
+* facebook
+
+#### Ark template example
+
+```html
+@extends('beautymail::templates.ark')
+
+@section('content')
+
+    @include('beautymail::templates.ark.heading', [
+		'heading' => 'Hello World!',
+		'level' => 'h1'
+	])
+
+    @include('beautymail::templates.ark.contentStart')
+
+        <h4 class="secondary"><strong>Hello World</strong></h4>
+        <p>This is a test</p>
+
+    @include('beautymail::templates.ark.contentEnd')
+
+    @include('beautymail::templates.ark.heading', [
+		'heading' => 'Another headline',
+		'level' => 'h2'
+	])
+
+    @include('beautymail::templates.ark.contentStart')
+
+        <h4 class="secondary"><strong>Hello World again</strong></h4>
+        <p>This is another test</p>
+
+    @include('beautymail::templates.ark.contentEnd')
+
+
+@stop
 ```
