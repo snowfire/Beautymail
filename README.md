@@ -15,9 +15,9 @@ __Widgets__ by [Campaign Monitor](https://www.campaignmonitor.com/templates/all/
 
 ![Widget Template](screenshots/widgets.png?raw=true "Widgets template")
 
-__Ark__ by __Me__:
+__Minty__ by __Stamplia__:
 
-![Widget Template](screenshots/ark.png?raw=true "Widgets template")
+![Widget Template](screenshots/minty.png?raw=true "Widgets template")
 
 ## Installation
 
@@ -109,6 +109,68 @@ To change colours for the different segments, pass a colour variable:
 
 ```php
 @include('beautymail::templates.widgets.articleStart', ['color' => '#0000FF'])
+```
+
+### _Template:_ Minty
+
+Required in `$data`. Please note that you have to pass all variables, but it is okay to set them to null to hide data.
+
+* senderName - __required__
+* unsubscribe
+
+#### Minty template example
+
+```html
+@extends('beautymail::templates.minty')
+
+@section('content')
+
+
+
+	@include('beautymail::templates.minty.contentStart')
+		<tr>
+			<td class="title">
+				Welcome Steve
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" height="10"></td>
+		</tr>
+		<tr>
+			<td class="paragraph">
+				This is a paragraph text
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" height="25"></td>
+		</tr>
+		<tr>
+			<td class="title">
+				This is a heading
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" height="10"></td>
+		</tr>
+		<tr>
+			<td class="paragraph">
+				More paragraph text.
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" height="25"></td>
+		</tr>
+		<tr>
+			<td>
+				@include('beautymail::templates.minty.button', ['text' => 'Sign in', 'link' => '#'])
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" height="25"></td>
+		</tr>
+	@include('beautymail::templates.minty.contentEnd')
+
+@stop
 ```
 
 
