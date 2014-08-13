@@ -33,7 +33,7 @@ Edit your `app.php` and add a new Service Provider:
 
 Publish assets to your public folder
 
-    php artisan asset:publish --package="Snowfire/Beautymail"
+    php artisan asset:publish "Snowfire/Beautymail"
 
 ## Send your first Beauty mail
 
