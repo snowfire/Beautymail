@@ -105,12 +105,12 @@
 
 						<table width="600" cellpadding="0" cellspacing="0" border="0" class="table">
 							<tr>
-								<td width="250" bgcolor="#e4e4e4" class="logocell"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/spacer.gif" width="1" height="20" class="hide"><br class="hide"><img src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/widgets/logo.png" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" alt="{{ $senderName }}" style="-ms-interpolation-mode:bicubic;"><br><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/spacer.gif" width="1" height="10" class="hide"><br class="hide"></td>
-								<td align="right" width="350" class="hide" style="color:#a6a6a6;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;text-shadow: 0 1px 0 #ffffff;" valign="top" bgcolor="#e4e4e4"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/widgets/spacer.gif" width="1" height="63"><br></td>
+								<td width="250" bgcolor="#e4e4e4" class="logocell"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/spacer.gif" width="1" height="20" class="hide"><br class="hide"><img src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/widgets/logo.png" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" alt="{{ $senderName }}" style="-ms-interpolation-mode:bicubic;"><br><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/spacer.gif" width="1" height="10" class="hide"><br class="hide"></td>
+								<td align="right" width="350" class="hide" style="color:#a6a6a6;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;text-shadow: 0 1px 0 #ffffff;" valign="top" bgcolor="#e4e4e4"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/widgets/spacer.gif" width="1" height="63"><br></td>
 							</tr>
 						</table>
 
-						<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/widgets/spacer.gif" width="1" height="15" class="divider"><br>
+						<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/widgets/spacer.gif" width="1" height="15" class="divider"><br>
 
 						@section('content')
 						@show
@@ -119,13 +119,13 @@
 				</tr>
 			</table>
 
-			<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/widgets/spacer.gif" width="1" height="25" class="divider"><br>
+			<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/widgets/spacer.gif" width="1" height="25" class="divider"><br>
 
 			<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f2f2f2">
 				<tr>
 					<td>
 
-						<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/widgets/spacer.gif" width="1" height="30"><br>
+						<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/widgets/spacer.gif" width="1" height="30"><br>
 
 						<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="table">
 							<tr>
@@ -135,13 +135,13 @@
 										<tr>
 											<td width="380" valign="top" class="footershow">
 
-												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/widgets/widgets/spacer.gif" width="1" height="8"><br>
+												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/widgets/widgets/spacer.gif" width="1" height="8"><br>
 
-												@if ($reminder)
+												@if (isset($reminder))
 													<p style="color:#a6a6a6;font-size:12px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:15px;padding-top:0;padding-bottom:0;line-height:18px;" class="reminder">{{ $reminder }}</p>
 												@endif
 
-												@if ($unsubscribe)
+												@if (isset($unsubscribe))
 													<p style="color:#c9c9c9;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{ $unsubscribe }}</p>
 												@endif
 
@@ -150,24 +150,24 @@
 
 												<table cellpadding="0" cellspacing="0" border="0">
 													<tr>
-														@if ($flickr)
-															<td><a href="{{ $flickr }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/widgets/flickr.gif" width="42" height="32" alt="See our photos on Flickr"></a></td>
+														@if (isset($flickr))
+															<td><a href="{{ $flickr }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/widgets/flickr.gif" width="42" height="32" alt="See our photos on Flickr"></a></td>
 														@endif
 
-														@if ($twitter)
-															<td><a href="{{ $twitter }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/widgets/twitter.gif" width="42" height="32" alt="Follow us on Twitter"></a></td>
+														@if (isset($twitter))
+															<td><a href="{{ $twitter }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/widgets/twitter.gif" width="42" height="32" alt="Follow us on Twitter"></a></td>
 														@endif
 
-														@if ($facebook)
-															<td><a href="{{ $facebook }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/widgets/facebook.gif" width="32" height="32" alt="Visit us on Facebook"></a></td>
+														@if (isset($facebook))
+															<td><a href="{{ $facebook }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/widgets/facebook.gif" width="32" height="32" alt="Visit us on Facebook"></a></td>
 														@endif
 
 													</tr>
 												</table>
 
-												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/widgets/spacer.gif" width="1" height="10"><br><p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:bold;">{{ $senderName }}</p>
+												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/widgets/spacer.gif" width="1" height="10"><br><p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:bold;">{{ $senderName }}</p>
 
-												@if ($address)
+												@if (isset($address))
 													<p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:normal;">
 														{{ $address }}
 													</p>
@@ -181,7 +181,7 @@
 							</tr>
 						</table>
 
-						<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/widgets/spacer.gif" width="1" height="25"><br>
+						<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/snowfire/beautymail/assets/images/widgets/spacer.gif" width="1" height="25"><br>
 
 					</td>
 				</tr>
