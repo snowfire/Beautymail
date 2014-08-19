@@ -29,11 +29,11 @@ Edit your `composer.php` and add:
 
 Edit your `app.php` and add a new Service Provider:
 
-    'Snowfire\Beautymail\BeautymailServiceProvider'
+    'Snowfire\Beautymail\BeautymailServiceProvider',
 
 Publish assets to your public folder
 
-    php artisan asset:publish "Snowfire/Beautymail"
+    php artisan asset:publish "snowfire/beautymail"
 
 ## Send your first Beauty mail
 
