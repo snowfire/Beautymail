@@ -4,7 +4,8 @@ return [
 
 	'colors' => [
 
-		'hightlight' => '#004ca3'
+		'hightlight' => '#004ca3',
+		'button' => '#004cad'
 
 	]
 
