@@ -23,11 +23,11 @@ __Minty__ by __Stamplia__:
 
 Beautymail requires [Laravel Email Inliner](https://github.com/emilsundberg/inliner) to make it fun to work with HTML emails.
 
-Edit your `composer.php` and add:
+Edit your `composer.json` and add:
 
     "snowfire/beautymail": "1.*"
 
-Edit your `app.php` and add a new Service Provider:
+Run `composer updated` and edit your `app.php` and add a new Service Provider:
 
     'Snowfire\Beautymail\BeautymailServiceProvider',
 
