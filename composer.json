@@ -1,5 +1,5 @@
 {
-    "name": "snowfire/beautymail",
+    "name": "bgarrison25/beautymail",
     "description": "Send beautiful html emails with Laravel",
 	"keywords": ["laravel", "html", "email"],
     "license": "MIT",
