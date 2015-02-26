@@ -1,5 +1,5 @@
 {
-    "name": "snowfire/beautymail",
+    "name": "bgarrison25/beautymail",
     "description": "Send beautiful html emails with Laravel",
 	"keywords": ["laravel", "html", "email"],
     "license": "MIT",
@@ -12,7 +12,7 @@
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "4.*|5.*",
-        "emil/inliner": "1.*"
+        "fedeisas/laravel-mail-css-inliner": "1.3"
     },
     "autoload": {
         "psr-0": {
