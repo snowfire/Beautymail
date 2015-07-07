@@ -27,7 +27,7 @@ Edit your `composer.json` and add:
 
     "snowfire/beautymail": "1.*"
 
-Run `composer updated` and edit your `app.php` and add a new Service Provider:
+Run `composer update` and edit your `app.php` and add a new Service Provider:
 
     'Snowfire\Beautymail\BeautymailServiceProvider',
 
