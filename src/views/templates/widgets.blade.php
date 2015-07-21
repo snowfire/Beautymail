@@ -105,7 +105,7 @@
 
 						<table width="600" cellpadding="0" cellspacing="0" border="0" class="table">
 							<tr>
-								<td width="250" bgcolor="#e4e4e4" class="logocell"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/spacer.gif" width="1" height="20" class="hide"><br class="hide"><img src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/logo.png" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" alt="{{ $senderName }}" style="-ms-interpolation-mode:bicubic;"><br><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/spacer.gif" width="1" height="10" class="hide"><br class="hide"></td>
+								<td width="250" bgcolor="#e4e4e4" class="logocell"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="20" class="hide"><br class="hide"><img src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/logo.png" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" alt="{{ $senderName }}" style="-ms-interpolation-mode:bicubic;"><br><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10" class="hide"><br class="hide"></td>
 								<td align="right" width="350" class="hide" style="color:#a6a6a6;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;text-shadow: 0 1px 0 #ffffff;" valign="top" bgcolor="#e4e4e4"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="63"><br></td>
 							</tr>
 						</table>
@@ -135,7 +135,7 @@
 										<tr>
 											<td width="380" valign="top" class="footershow">
 
-												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/widgets/spacer.gif" width="1" height="8"><br>
+												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="8"><br>
 
 												@if (isset($reminder))
 													<p style="color:#a6a6a6;font-size:12px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:15px;padding-top:0;padding-bottom:0;line-height:18px;" class="reminder">{!! $reminder  !!}</p>
