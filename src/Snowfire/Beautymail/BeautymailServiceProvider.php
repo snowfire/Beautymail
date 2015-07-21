@@ -18,9 +18,17 @@ class BeautymailServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->app->register('Emil\Inliner\InlinerServiceProvider');
+		$this->publishes([
+			__DIR__.'/../../config/templates.php' => config_path('beautymail.php')
+		], 'config');
 
-		$this->package('snowfire/beautymail');
+		$this->publishes([
+			__DIR__ . '/../../../public' => public_path('vendor/beautymail'),
+		], 'public');
+
+		$this->loadViewsFrom(__DIR__ . '/../../views', 'beautymail');
+
+        $this->app['mailer']->getSwiftMailer()->registerPlugin(new CssInlinerPlugin());
 	}
 
 	/**

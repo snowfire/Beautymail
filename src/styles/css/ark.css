@@ -160,7 +160,7 @@ br, strong br, b br, em br, i br {
   line-height: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, Helvetica, serif;
+  font-family: Helvetica Neue, Helvetica, Arial, Helvetica, serif;
   font-weight: 300;
   line-height: 130% !important;
   -webkit-font-smoothing: antialiased;
@@ -227,7 +227,7 @@ table td, table tr {
 
 /* Fonts and Content */
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, Helvetica, serif; }
+  font-family: Helvetica Neue, Helvetica, Arial, Helvetica, serif; }
 
 body p {
   font-weight: 400; }
@@ -251,7 +251,7 @@ strong {
 
 #headline p {
   color: #eeeeee;
-  font-family: "Helvetica Neue", Helvetica, Arial, Helvetica, serif;
+  font-family: Helvetica Neue, Helvetica, Arial, Helvetica, serif;
   font-size: 36px;
   text-align: left;
   margin-top: 0px;
@@ -352,3 +352,5 @@ strong {
 #street-address {
   color: #ffffff;
   white-space: pre-wrap; }
+
+/*# sourceMappingURL=ark.css.map */

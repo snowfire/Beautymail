@@ -1,4 +1,4 @@
-# Beautymail for Laravel
+# Beautymail for Laravel 5
 
 Beautymail makes it super easy to send beatiful responsive HTML emails. It's made for things like:
 
@@ -6,6 +6,8 @@ Beautymail makes it super easy to send beatiful responsive HTML emails. It's mad
 * Password reminders
 * Invoices
 * Data exports
+
+If you're on Laravel 4, use the `1.x` branch.
 
 ## Templates
 
@@ -25,7 +27,7 @@ Beautymail requires [Laravel Email Inliner](https://github.com/emilsundberg/inli
 
 Edit your `composer.json` and add:
 
-    "snowfire/beautymail": "1.*"
+    "snowfire/beautymail": "dev-master"
 
 Run `composer update` and edit your `app.php` and add a new Service Provider:
 
@@ -33,7 +35,7 @@ Run `composer update` and edit your `app.php` and add a new Service Provider:
 
 Publish assets to your public folder
 
-    php artisan asset:publish "snowfire/beautymail"
+    php artisan vendor:publish
 
 ## Send your first Beauty mail
 
@@ -48,6 +50,8 @@ Route::get('/test', function()
 		'unsubscribe' => null,
 		'address' => '87 Street Avenue, California, USA',
 
+		'logo' => ['width' => '', 'height' => ''],
+
 		'twitter' => 'http://www.facebook.com/abcwidgets',
 		'facebook' => 'http://twitter.com/abcwidgets',
 		'flickr' => 'http://www.flickr.com/photos/abcwidgets'
@@ -55,13 +59,16 @@ Route::get('/test', function()
 
 	Mail::send('emails.welcome', $data, function($message)
 	{
-		$message->to('foo@example.com', 'John Smith')->subject('Welcome!');
+		$message
+			->from('bar@example.com')
+			->to('foo@example.com', 'John Smith')
+			->subject('Welcome!');
 	});
 
 });
 ```
 
-Now create `app/views/emails/welcome.blade.php`
+Now create `resources/views/emails/welcome.blade.php`
 
 ```html
 @extends('beautymail::templates.widgets')
@@ -87,7 +94,7 @@ Now create `app/views/emails/welcome.blade.php`
 @stop
 ```
 
-That's it! If you have troubles sending emails, have a look at [Laravel Email Inliner on GitHub](https://github.com/emilsundberg/inliner) and check that you have all required Ruby Gems.
+That's it!
 
 ## Options
 

@@ -122,7 +122,7 @@
 					<!-- Spacing -->
 					<tr>
 						<td align="right" valign="middle" style="font-family: Helvetica, arial, sans-serif; font-size: 10px;color: #999999" st-content="preheader">
-<!--							If you cannot read this email, please  <a class="hlite" href="#" style="text-decoration: none; color: {{ Config::get('beautymail::templates.colors.hightlight', '#004cad') }}">click here</a>-->
+<!--							If you cannot read this email, please  <a class="hlite" href="#" style="text-decoration: none; color: {{ Config::get('beautymail::templates.colors.highlight', '#004cad') }}">click here</a>-->
 						</td>
 					</tr>
 					<!-- Spacing -->
@@ -144,7 +144,7 @@
 		<tbody>
 		<tr>
 			<td>
-				<table width="580" bgcolor="{{ Config::get('beautymail::templates.colors.hightlight', '#004cad') }}" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" hlitebg="edit" shadow="edit">
+				<table width="580" bgcolor="{{ Config::get('beautymail::templates.colors.highlight', '#004cad') }}" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" hlitebg="edit" shadow="edit">
 					<tbody>
 					<tr>
 						<td>
@@ -154,7 +154,7 @@
 								<tr>
 									<td valign="middle" width="270" style="padding: 10px 0 10px 20px;" class="logo">
 										<div class="imgpop">
-											<a href="#"><img src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/minty/logo.png" alt="logo" border="0" style="display:block; border:none; outline:none; text-decoration:none;" st-image="edit" class="logo"></a>
+											<a href="#"><img src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/minty/logo.png" alt="logo" border="0" style="display:block; border:none; outline:none; text-decoration:none;" st-image="edit" class="logo"></a>
 										</div>
 									</td>
 								</tr>

@@ -19,7 +19,7 @@
 					</tr>
 					<tr class="mobile_only">
 						<td class="w640" width="640" align="center">
-							<img class="mobile_only" border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/ark/logo.png" alt="{{ $senderName }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
+							<img class="mobile_only" border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/ark/logo.png" alt="{{ $senderName }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
 						</td>
 					</tr>
 					<tr class="mobile_only">
@@ -37,7 +37,7 @@
 								<tr>
 									<td class="w20" width="20"></td>
 									<td id="logo" width="{{ $logo['width'] }}" valign="top">
-										<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/ark/logo.png" alt="{{ $senderName }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
+										<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/ark/logo.png" alt="{{ $senderName }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
 									</td>
 									<td class="w30" width="30"></td>
 								</tr>
@@ -70,7 +70,7 @@
 									<td class="w50" width="50"></td>
 									<td class="w410" width="410">
 										@if ($reminder)
-											<p id="permission-reminder" class="footer-content-left" align="left">{{ $reminder }}</p>
+											<p id="permission-reminder" class="footer-content-left" align="left">{!! $reminder !!}</p>
 										@endif
 									</td>
 									<td valign="top">
@@ -79,13 +79,12 @@
 												<td colspan="2" height="10"></td>
 											</tr>
 											<tr>
-
 												@if ($twitter)
-													<td><a href="http://twitter.com/{{ $twitter }}"><img src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/ark/twitter.png" alt="Twitter" height="25" width="25" style="border:0" /></a></td>
+													<td><a href="http://twitter.com/{{ $twitter }}"><img src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/ark/twitter.png" alt="Twitter" height="25" width="25" style="border:0" /></a></td>
 												@endif
 
 												@if ($facebook)
-													<td><a href="http://facebook.com/{{ $facebook }}"><img src="{{ Request::getSchemeAndHttpHost() }}/packages/Snowfire/Beautymail/assets/images/ark/fb.png" alt="Facebook" height="25" width="25" style="border:0" /></a></td>
+													<td><a href="http://facebook.com/{{ $facebook }}"><img src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/ark/fb.png" alt="Facebook" height="25" width="25" style="border:0" /></a></td>
 												@endif
 											</tr>
 										</table>
