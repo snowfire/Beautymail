@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>{{ $senderName }}</title>
+	<title>{{ $senderName or '' }}</title>
 	<style>
 		a:hover {
 			text-decoration: underline !important;
@@ -105,7 +105,14 @@
 
 						<table width="600" cellpadding="0" cellspacing="0" border="0" class="table">
 							<tr>
-								<td width="250" bgcolor="#e4e4e4" class="logocell"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="20" class="hide"><br class="hide"><img src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/logo.png" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" alt="{{ $senderName }}" style="-ms-interpolation-mode:bicubic;"><br><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10" class="hide"><br class="hide"></td>
+								<td width="250" bgcolor="#e4e4e4" class="logocell">
+									<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="20" class="hide">
+									<br class="hide">
+									@if (isset($logo))
+									<img src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/logo.png" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" alt="{{ $senderName or '' }}" style="-ms-interpolation-mode:bicubic;">
+									@endif
+									<br>
+									<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10" class="hide"><br class="hide"></td>
 								<td align="right" width="350" class="hide" style="color:#a6a6a6;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;text-shadow: 0 1px 0 #ffffff;" valign="top" bgcolor="#e4e4e4"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="63"><br></td>
 							</tr>
 						</table>
@@ -165,7 +172,7 @@
 													</tr>
 												</table>
 
-												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10"><br><p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:bold;">{{ $senderName }}</p>
+												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10"><br><p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:bold;">{{ $senderName or '' }}</p>
 
 												@if (isset($address))
 													<p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:normal;">

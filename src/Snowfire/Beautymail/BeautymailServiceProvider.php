@@ -19,7 +19,7 @@ class BeautymailServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->publishes([
-			__DIR__.'/../../config/templates.php' => config_path('beautymail.php')
+			__DIR__.'/../../config/settings.php' => config_path('beautymail.php')
 		], 'config');
 
 		$this->publishes([
@@ -38,6 +38,10 @@ class BeautymailServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
+		$this->app->singleton('Snowfire\Beautymail\Beautymail', function($app)
+		{
+			return new \Snowfire\Beautymail\Beautymail(config('beautymail.view'));
+		});
 	}
 
 	/**

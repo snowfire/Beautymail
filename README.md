@@ -44,26 +44,14 @@ Add this to your `routes.php`
 ```php
 Route::get('/test', function()
 {
-	$data = [
-		'senderName' => 'ABC Widget', // Company name
-		'reminder' => 'You’re receiving this because you’re an awesome ABC Widgets customer or subscribed via <a href="http://www.abcwidgets.com/" style="color: #a6a6a6">our site</a>',
-		'unsubscribe' => null,
-		'address' => '87 Street Avenue, California, USA',
-
-		'logo' => ['width' => '', 'height' => ''],
-
-		'twitter' => 'http://www.facebook.com/abcwidgets',
-		'facebook' => 'http://twitter.com/abcwidgets',
-		'flickr' => 'http://www.flickr.com/photos/abcwidgets'
-	];
-
-	Mail::send('emails.welcome', $data, function($message)
-	{
-		$message
+	$beautymail = app()->make('Snowfire\Beautymail\Beautymail');
+    $beautymail->send('emails.welcome', [], function($message)
+    {
+        $message
 			->from('bar@example.com')
 			->to('foo@example.com', 'John Smith')
 			->subject('Welcome!');
-	});
+    });
 
 });
 ```
@@ -100,11 +88,11 @@ That's it!
 
 ### _Template:_ Widgets
 
-Required in `$data`. Please note that you have to pass all variables, but it is okay to set them to null to hide data.
+Pass these trough the mail `$data` field or create defaults in `config/beautymail.php`.
 
-* senderName - __required__
-* logo['width'] - __required__
-* logo['height'] - __required__
+* senderName
+* logo['width']
+* logo['height']
 * reminder
 * unsubscribe
 * address
@@ -120,9 +108,9 @@ To change colours for the different segments, pass a colour variable:
 
 ### _Template:_ Minty
 
-Required in `$data`. Please note that you have to pass all variables, but it is okay to set them to null to hide data.
+Pass these trough the mail `$data` field or create defaults in `config/beautymail.php`.
 
-* senderName - __required__
+* senderName
 * unsubscribe
 
 #### Minty template example
@@ -131,8 +119,6 @@ Required in `$data`. Please note that you have to pass all variables, but it is 
 @extends('beautymail::templates.minty')
 
 @section('content')
-
-
 
 	@include('beautymail::templates.minty.contentStart')
 		<tr>
@@ -183,7 +169,7 @@ Required in `$data`. Please note that you have to pass all variables, but it is 
 
 ### _Template:_ Ark
 
-Required in `$data`. Please note that you have to pass all variables, but it is okay to set them to null to hide data.
+Pass these trough the mail `$data` field or create defaults in `config/beautymail.php`.
 
 * senderName - __required__
 * logo['width'] - __required__
