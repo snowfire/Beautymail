@@ -379,7 +379,7 @@ strong {
 }
 
 .button-content {
-  button {
+  .button {
 	letter-spacing: 0.08em;
 	border-radius: 3px;
 	text-transform: uppercase;
@@ -395,6 +395,7 @@ strong {
 	background: #ff7b3a;
 	color: #fff;
 	border: none;
+    text-decoration: none;
   }
 }
 

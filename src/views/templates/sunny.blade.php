@@ -22,7 +22,7 @@
 					</tr>
 					<tr class="mobile_only">
 						<td class="w640" width="640" align="center">
-							<img class="mobile_only mobile-logo" border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/sunny/logo.png" alt="{{ $senderName or '' }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
+							<img class="mobile_only mobile-logo" border="0" src="{{ $logo['path'] }}" alt="{{ $senderName or '' }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
 						</td>
 					</tr>
 					<tr class="mobile_only">
@@ -48,7 +48,7 @@
 								<tr>
 									<td class="w30" width="30"></td>
 									<td id="logo" width="{{ $logo['width'] }}" valign="top">
-										<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/sunny/logo.png" alt="{{ $senderName or ''}}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
+										<img border="0" src="{{ $logo['path'] }}" alt="{{ $senderName or ''}}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
 									</td>
 									<td class="w30" width="30"></td>
 								</tr>

@@ -368,7 +368,7 @@ strong {
     .article-content p.text-center {
       text-align: center; }
 
-.button-content button {
+.button-content .button {
   letter-spacing: 0.08em;
   border-radius: 3px;
   text-transform: uppercase;
@@ -383,7 +383,8 @@ strong {
   transition: all 0.15s ease-in-out;
   background: #ff7b3a;
   color: #fff;
-  border: none; }
+  border: none;
+  text-decoration: none; }
 
 .panel {
   border-collapse: collapse;

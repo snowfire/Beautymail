@@ -7,7 +7,7 @@
             <tr>
                 <td class="w560" width="560">
                     <div class="button-content" align="center">
-                        <button>{{ $title }}</button>
+                        <a href="{{ $link }}" class="button">{{ $title }}</a>
                     </div>
                 </td>
             </tr>
