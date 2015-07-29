@@ -15,7 +15,11 @@ return [
 		'unsubscribe' => null,
 		'address' => null,
 
-		'logo' => ['width' => '', 'height' => ''],
+		'logo' => [
+			'path' => \Request::getSchemeAndHttpHost() . '/vendor/Beautymail/assets/images/sunny/logo.png',
+			'width' => '',
+			'height' => ''
+		],
 
 		'twitter' => null,
 		'facebook' => null,
