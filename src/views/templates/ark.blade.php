@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>{{ $senderName }}</title>
+		<title>{{ $senderName or '' }}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<style type="text/css">{{ file_get_contents(app_path() . '/../vendor/snowfire/beautymail/src/styles/css/ark.css') }}</style>
 	</head>
@@ -19,7 +19,7 @@
 					</tr>
 					<tr class="mobile_only">
 						<td class="w640" width="640" align="center">
-							<img class="mobile_only" border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/ark/logo.png" alt="{{ $senderName }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
+							<img class="mobile_only" border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/ark/logo.png" alt="{{ $senderName or '' }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
 						</td>
 					</tr>
 					<tr class="mobile_only">
@@ -37,7 +37,7 @@
 								<tr>
 									<td class="w20" width="20"></td>
 									<td id="logo" width="{{ $logo['width'] }}" valign="top">
-										<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/ark/logo.png" alt="{{ $senderName }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
+										<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/ark/logo.png" alt="{{ $senderName or ''}}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
 									</td>
 									<td class="w30" width="30"></td>
 								</tr>
@@ -69,7 +69,7 @@
 								<tr>
 									<td class="w50" width="50"></td>
 									<td class="w410" width="410">
-										@if ($reminder)
+										@if (isset($reminder))
 											<p id="permission-reminder" class="footer-content-left" align="left">{!! $reminder !!}</p>
 										@endif
 									</td>
@@ -79,11 +79,11 @@
 												<td colspan="2" height="10"></td>
 											</tr>
 											<tr>
-												@if ($twitter)
+												@if (isset($twitter))
 													<td><a href="http://twitter.com/{{ $twitter }}"><img src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/ark/twitter.png" alt="Twitter" height="25" width="25" style="border:0" /></a></td>
 												@endif
 
-												@if ($facebook)
+												@if (isset($facebook))
 													<td><a href="http://facebook.com/{{ $facebook }}"><img src="{{ Request::getSchemeAndHttpHost() }}/vendor/Beautymail/assets/images/ark/fb.png" alt="Facebook" height="25" width="25" style="border:0" /></a></td>
 												@endif
 											</tr>
