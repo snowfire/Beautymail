@@ -16,7 +16,7 @@ return [
 		'address' => null,
 
 		'logo' => [
-			'path' => \Request::getSchemeAndHttpHost() . '/vendor/Beautymail/assets/images/sunny/logo.png',
+			'path' => '%PUBLIC%/vendor/Beautymail/assets/images/sunny/logo.png',
 			'width' => '',
 			'height' => ''
 		],

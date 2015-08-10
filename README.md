@@ -21,17 +21,19 @@ __Minty__ by __Stamplia__:
 
 ![Widget Template](screenshots/minty.png?raw=true "Widgets template")
 
+__Sunny__
+
+![Widget Template](screenshots/sunny.png?raw=true "Sunny template")
+
 ## Installation
 
-Beautymail requires [Laravel Email Inliner](https://github.com/emilsundberg/inliner) to make it fun to work with HTML emails.
+Add the package to your `composer.json` by running:
 
-Edit your `composer.json` and add:
+    composer require snowfire/beautymail dev-master
 
-    "snowfire/beautymail": "dev-master"
+When it's installed, add it to the providers list in `config/app.php`
 
-Run `composer update` and edit your `app.php` and add a new Service Provider:
-
-    'Snowfire\Beautymail\BeautymailServiceProvider',
+	Snowfire\Beautymail\BeautymailServiceProvider::class,
 
 Publish assets to your public folder
 
@@ -44,7 +46,7 @@ Add this to your `routes.php`
 ```php
 Route::get('/test', function()
 {
-	$beautymail = app()->make('Snowfire\Beautymail\Beautymail');
+	$beautymail = app()->make(Snowfire\Beautymail\Beautymail::class);
     $beautymail->send('emails.welcome', [], function($message)
     {
         $message
@@ -78,7 +80,6 @@ Now create `resources/views/emails/welcome.blade.php`
 
 	@include('beautymail::templates.widgets.newfeatureEnd')
 
-
 @stop
 ```
 
@@ -88,30 +89,11 @@ That's it!
 
 ### _Template:_ Widgets
 
-Pass these trough the mail `$data` field or create defaults in `config/beautymail.php`.
-
-* senderName
-* logo['width']
-* logo['height']
-* reminder
-* unsubscribe
-* address
-* twitter
-* facebook
-* flickr
-
 To change colours for the different segments, pass a colour variable:
 
 ```php
 @include('beautymail::templates.widgets.articleStart', ['color' => '#0000FF'])
 ```
-
-### _Template:_ Minty
-
-Pass these trough the mail `$data` field or create defaults in `config/beautymail.php`.
-
-* senderName
-* unsubscribe
 
 #### Minty template example
 
@@ -166,19 +148,7 @@ Pass these trough the mail `$data` field or create defaults in `config/beautymai
 @stop
 ```
 
-
-### _Template:_ Ark
-
-Pass these trough the mail `$data` field or create defaults in `config/beautymail.php`.
-
-* senderName - __required__
-* logo['width'] - __required__
-* logo['height'] - __required__
-* reminder
-* twitter
-* facebook
-
-#### Ark template example
+### Ark template example
 
 ```html
 @extends('beautymail::templates.ark')
@@ -209,6 +179,31 @@ Pass these trough the mail `$data` field or create defaults in `config/beautymai
 
     @include('beautymail::templates.ark.contentEnd')
 
+@stop
+```
+
+#### Sunny template example
+
+```html
+@extends('beautymail::templates.sunny')
+
+@section('content')
+
+    @include ('beautymail::templates.sunny.heading' , [
+        'heading' => 'Hello!',
+        'level' => 'h1',
+    ])
+
+    @include('beautymail::templates.sunny.contentStart')
+
+        <p>Today will be a great day!</p>
+
+    @include('beautymail::templates.sunny.contentEnd')
+
+    @include('beautymail::templates.sunny.button', [
+        	'title' => 'Click me',
+        	'link' => 'http://google.com'
+    ])
 
 @stop
 ```

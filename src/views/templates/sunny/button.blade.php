@@ -14,5 +14,5 @@
             </tbody>
         </table>
     </td>
-    <td class="w30" width="30"></td>
+    <td class="w50" width="50"></td>
 </tr>

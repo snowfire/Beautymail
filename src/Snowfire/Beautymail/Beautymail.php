@@ -28,6 +28,12 @@ class Beautymail
      */
     public function send($view, $data, $callback)
     {
+        $this->settings['logo']['path'] = str_replace(
+            '%PUBLIC%',
+            \Request::getSchemeAndHttpHost(),
+            $this->settings['logo']['path']
+        );
+
         $data = $data + $this->settings;
 
         $this->mailer->send($view, $data, $callback);
