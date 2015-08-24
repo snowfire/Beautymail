@@ -26,7 +26,7 @@ class Beautymail
      * @param  \Closure|string  $callback
      * @return mixed
      */
-    public function send($view, $data, $callback)
+    public function send($view, array $data = [], $callback)
     {
         $this->settings['logo']['path'] = str_replace(
             '%PUBLIC%',
@@ -34,7 +34,7 @@ class Beautymail
             $this->settings['logo']['path']
         );
 
-        $data = $data + $this->settings;
+        $data = array_merge($data, $this->settings);
 
         $this->mailer->send($view, $data, $callback);
     }
