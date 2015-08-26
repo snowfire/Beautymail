@@ -2,56 +2,57 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class BeautymailServiceProvider extends ServiceProvider {
+class BeautymailServiceProvider extends ServiceProvider
+{
 
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = false;
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = false;
 
-	/**
-	 * Bootstrap the application events.
-	 *
-	 * @return void
-	 */
-	public function boot()
-	{
-		$this->publishes([
-			__DIR__.'/../../config/settings.php' => config_path('beautymail.php')
-		], 'config');
+    /**
+     * Bootstrap the application events.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/../../config/settings.php' => config_path('beautymail.php')
+        ], 'config');
 
-		$this->publishes([
-			__DIR__ . '/../../../public' => public_path('vendor/beautymail'),
-		], 'public');
+        $this->publishes([
+            __DIR__ . '/../../../public' => public_path('vendor/beautymail'),
+        ], 'public');
 
-		$this->loadViewsFrom(__DIR__ . '/../../views', 'beautymail');
+        $this->loadViewsFrom(__DIR__ . '/../../views', 'beautymail');
 
         $this->app['mailer']->getSwiftMailer()->registerPlugin(new CssInlinerPlugin());
-	}
+    }
 
-	/**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
-		$this->app->singleton('Snowfire\Beautymail\Beautymail', function($app)
-		{
-			return new \Snowfire\Beautymail\Beautymail(config('beautymail.view'));
-		});
-	}
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->singleton('Snowfire\Beautymail\Beautymail',
+            function ($app) {
+                return new \Snowfire\Beautymail\Beautymail(config('beautymail.view'));
+            });
+    }
 
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return array();
-	}
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return array();
+    }
 
 }
