@@ -1,4 +1,6 @@
-<?php namespace Snowfire\Beautymail;
+<?php
+
+namespace Snowfire\Beautymail;
 
 class CssInlinerPlugin implements \Swift_Events_SendListener
 {
@@ -38,7 +40,7 @@ class CssInlinerPlugin implements \Swift_Events_SendListener
     }
 
     /**
-     * Do nothing
+     * Do nothing.
      *
      * @param \Swift_Events_SendEvent $evt
      */

@@ -1,10 +1,11 @@
-<?php namespace Snowfire\Beautymail;
+<?php
+
+namespace Snowfire\Beautymail;
 
 use Illuminate\Support\ServiceProvider;
 
 class BeautymailServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -20,14 +21,14 @@ class BeautymailServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../../config/settings.php' => config_path('beautymail.php')
+            __DIR__.'/../../config/settings.php' => config_path('beautymail.php'),
         ], 'config');
 
         $this->publishes([
-            __DIR__ . '/../../../public' => public_path('vendor/beautymail'),
+            __DIR__.'/../../../public' => public_path('vendor/beautymail'),
         ], 'public');
 
-        $this->loadViewsFrom(__DIR__ . '/../../views', 'beautymail');
+        $this->loadViewsFrom(__DIR__.'/../../views', 'beautymail');
 
         $this->app['mailer']->getSwiftMailer()->registerPlugin(new CssInlinerPlugin());
     }
@@ -52,7 +53,6 @@ class BeautymailServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array();
+        return [];
     }
-
 }
