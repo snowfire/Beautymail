@@ -29,6 +29,7 @@ class Beautymail
     {
         $this->settings = $settings;
         $this->mailer = app()->make('Illuminate\Contracts\Mail\Mailer');
+        $this->setLogoPath();
     }
 
     /**
@@ -52,14 +53,32 @@ class Beautymail
      */
     public function send($view, array $data = [], $callback)
     {
+        $data = array_merge($data, $this->settings);
+
+        $this->mailer->send($view, $data, $callback);
+    }
+
+    /**
+     * @param $view
+     * @param array $data
+     * @return \Illuminate\View\View
+     */
+    public function view($view, array $data = [])
+    {
+        $data = array_merge($data, $this->settings);
+
+        return view($view, $data);
+    }
+
+    /**
+     * @return mixed
+     */
+    private function setLogoPath()
+    {
         $this->settings['logo']['path'] = str_replace(
             '%PUBLIC%',
             \Request::getSchemeAndHttpHost(),
             $this->settings['logo']['path']
         );
-
-        $data = array_merge($data, $this->settings);
-
-        $this->mailer->send($view, $data, $callback);
     }
 }
