@@ -65,7 +65,7 @@ class Beautymail
      */
     public function view($view, array $data = [])
     {
-        $data = array_merge($data, $this->settings);
+        $data = array_merge($this->settings, $data);
 
         return view($view, $data);
     }
