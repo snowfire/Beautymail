@@ -53,7 +53,7 @@ class Beautymail
      */
     public function send($view, array $data = [], $callback)
     {
-        $data = array_merge($data, $this->settings);
+        $data = array_merge($this->settings, $data);
 
         $this->mailer->send($view, $data, $callback);
     }
