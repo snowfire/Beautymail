@@ -58,6 +58,22 @@ class Beautymail
         $this->mailer->send($view, $data, $callback);
     }
 
+	/**
+     * Send a new message using the a view via queue.
+     *
+     * @param string|array    $view
+     * @param array           $data
+     * @param \Closure|string $callback
+     *
+     * @return void
+     */
+    public function queue($view, array $data = [], $callback)
+    {
+        $data = array_merge($this->settings, $data);
+
+        $this->mailer->queue($view, $data, $callback);
+    }
+
     /**
      * @param $view
      * @param array $data
