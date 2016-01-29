@@ -30,6 +30,10 @@ class BeautymailServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../../views', 'beautymail');
 
+        $this->publishes([
+            __DIR__ . '/../../views' => base_path('resources/views/vendor/beautymail')
+        ]);
+
         $this->app['mailer']->getSwiftMailer()->registerPlugin(new CssInlinerPlugin());
     }
 
