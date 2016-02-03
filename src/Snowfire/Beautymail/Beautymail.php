@@ -51,14 +51,14 @@ class Beautymail
      *
      * @return void
      */
-    public function send($view, array $data = [], $callback)
+    public function send($view, array $data, $callback)
     {
         $data = array_merge($this->settings, $data);
 
         $this->mailer->send($view, $data, $callback);
     }
 
-	/**
+    /**
      * Send a new message using the a view via queue.
      *
      * @param string|array    $view
@@ -67,7 +67,7 @@ class Beautymail
      *
      * @return void
      */
-    public function queue($view, array $data = [], $callback)
+    public function queue($view, array $data, $callback)
     {
         $data = array_merge($this->settings, $data);
 
