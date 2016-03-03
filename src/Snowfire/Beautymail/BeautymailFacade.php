@@ -15,4 +15,5 @@ class BeautymailFacade extends Facade
     {
         return 'Snowfire\Beautymail\Beautymail';
     }
+    
 }
