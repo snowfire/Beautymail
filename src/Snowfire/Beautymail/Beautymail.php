@@ -4,7 +4,7 @@ namespace Snowfire\Beautymail;
 
 use Illuminate\Contracts\Mail\Mailer;
 
-class Beautymail
+class Beautymail implements Mailer
 {
     /**
      * Contains settings for emails processed by Beautymail.
@@ -84,6 +84,28 @@ class Beautymail
         $data = array_merge($this->settings, $data);
 
         return view($view, $data);
+    }
+
+    /**
+     * Send a new message when only a raw text part.
+     *
+     * @param  string  $text
+     * @param  mixed  $callback
+     * @return void
+     */
+    public function raw($text, $callback)
+    {
+        return $this->mailer->send(['raw' => $text], [], $callback);
+    }
+
+    /**
+     * Get the array of failed recipients.
+     *
+     * @return array
+     */
+    public function failures()
+    {
+        return $this->mailer->failures();
     }
 
     /**
