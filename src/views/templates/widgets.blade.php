@@ -158,15 +158,15 @@
 												<table cellpadding="0" cellspacing="0" border="0">
 													<tr>
 														@if (isset($flickr))
-															<td><a href="{{ $flickr }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/flickr.gif" width="42" height="32" alt="See our photos on Flickr"></a></td>
+															<td><a href="https://www.flickr.com/photos/{{ $flickr }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/flickr.gif" width="42" height="32" alt="See our photos on Flickr"></a></td>
 														@endif
 
 														@if (isset($twitter))
-															<td><a href="{{ $twitter }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/twitter.gif" width="42" height="32" alt="Follow us on Twitter"></a></td>
+															<td><a href="https://twitter.com/{{ $twitter }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/twitter.gif" width="42" height="32" alt="Follow us on Twitter"></a></td>
 														@endif
 
 														@if (isset($facebook))
-															<td><a href="{{ $facebook }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/facebook.gif" width="32" height="32" alt="Visit us on Facebook"></a></td>
+															<td><a href="https://www.facebook.com/{{ $facebook }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/facebook.gif" width="32" height="32" alt="Visit us on Facebook"></a></td>
 														@endif
 
 													</tr>
