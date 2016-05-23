@@ -40,10 +40,10 @@
 					</tr>
 
 					<tr class="mobile_only">
-						<td class="w640"  height="10" width="640" bgcolor="#ffffff"></td>
+						<td class="w640"  height="10" width="640"></td>
 					</tr>
 					<tr class="mobile_only">
-						<td class="w640"  height="20" width="640" bgcolor="#ffffff"></td>
+						<td class="w640"  height="20" width="640"></td>
 					</tr>
 					<tr>
 						<td id="header" class="w640" align="center" width="640">
