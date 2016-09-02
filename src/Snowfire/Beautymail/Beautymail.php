@@ -51,7 +51,7 @@ class Beautymail implements Mailer
      *
      * @return void
      */
-    public function send($view, array $data, $callback)
+    public function send($view, array $data = [], $callback = null)
     {
         $data = array_merge($this->settings, $data);
 
