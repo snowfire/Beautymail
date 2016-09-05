@@ -28,11 +28,11 @@ class CssInlinerPlugin implements \Swift_Events_SendListener
         $message = $evt->getMessage();
 
         $properTypes = [
-            'text/html', 
-            'multipart/alternative', 
+            'text/html',
+            'multipart/alternative',
             'multipart/mixed',
         ];
-        
+
         if ($message->getBody() && in_array($message->getContentType(), $properTypes)) {
             $this->inliner->setHtml($message->getBody());
             $message->setBody($this->inliner->emogrify());
