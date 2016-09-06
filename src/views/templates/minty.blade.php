@@ -3,9 +3,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
 	<style type="text/css">{{ file_get_contents(app_path() . '/../vendor/snowfire/beautymail/src/styles/css/minty.css') }}</style>
-	@if($css))
+	@if($css)
 	<style type="text/css">
-		{{ $css or '' }}
+		{{ $css }}
 	</style>
 	@endif
 </head>
