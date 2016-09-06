@@ -3,9 +3,9 @@
 		<title>{{ $senderName or '' }}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<style type="text/css">{{ file_get_contents(app_path() . '/../vendor/snowfire/beautymail/src/styles/css/sunny.css') }}</style>
-		@if (isset($css))
-			<style>{{ $css }}</style>
-		@endif
+		<style type="text/css">
+			{{ $css or '' }
+		</style>
 	</head>
 	<body>
 	<table id="background-table" border="0" cellpadding="0" cellspacing="0" width="100%">
