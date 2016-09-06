@@ -108,8 +108,8 @@
 								<td width="250" bgcolor="#e4e4e4" class="logocell">
 									<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="20" class="hide">
 									<br class="hide">
-									@if (isset($logo))
-										<img src="{{ $logo['path'] }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" alt="{{ $senderName or '' }}" style="-ms-interpolation-mode:bicubic;">
+									@if (isset(Config::get('beautymail.view.logo')))
+										<img src="{{ Config::get('beautymail.view.logo.path') }}" width="{{ Config::get('beautymail.view.logo.width') }}" height="{{ Config::get('beautymail.view.logo.height') }}" alt="{{ $senderName or '' }}" style="-ms-interpolation-mode:bicubic;">
 									@endif
 									<br>
 									<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10" class="hide"><br class="hide"></td>
