@@ -46,7 +46,7 @@ class BeautymailServiceProvider extends ServiceProvider
                     array_merge(
                         config('beautymail.view'),
                         [
-                            'css' => implode(" ", config('beautymail.css'))
+                            'css' => !is_null(config('beautymail.css')) && count(config('beautymail.css')) > 0 ? implode(" ", config('beautymail.css')) : ''
                         ]
                     )
                 );
