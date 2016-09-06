@@ -42,7 +42,10 @@ class BeautymailServiceProvider extends ServiceProvider
     {
         $this->app->singleton('Snowfire\Beautymail\Beautymail',
             function ($app) {
-                return new \Snowfire\Beautymail\Beautymail(config('beautymail.view'));
+                return new \Snowfire\Beautymail\Beautymail(array_merge(
+                    config('beautymail.view'),
+                    ['css' => implode("\n", config('beautymail.css'))]
+                );
             });
     }
 
