@@ -91,6 +91,7 @@
 				font-size: 18px !important;
 			}
 		}
+		
 		{{ $css or '' }}
 	</style>
 </head>
