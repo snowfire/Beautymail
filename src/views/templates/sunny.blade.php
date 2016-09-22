@@ -3,8 +3,10 @@
 		<title>{{ $senderName or '' }}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<style type="text/css">{{ file_get_contents(app_path() . '/../vendor/snowfire/beautymail/src/styles/css/sunny.css') }}</style>
-		@if (isset($css))
-			<style>{{ $css }}</style>
+		@if($css)
+		<style type="text/css">
+			{{ $css }}
+		</style>
 		@endif
 	</head>
 	<body>
