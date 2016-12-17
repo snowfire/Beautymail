@@ -151,7 +151,7 @@
 												@endif
 
 												@if (isset($unsubscribe))
-													<p style="color:#c9c9c9;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{ $unsubscribe }}</p>
+													{{ $unsubscribe }}
 												@endif
 
 											</td>
