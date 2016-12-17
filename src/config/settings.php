@@ -32,6 +32,7 @@ return [
         'twitter'  => null,
         'facebook' => null,
         'flickr'   => null,
+        'github'   => null,
     ],
 
 ];
