@@ -25,27 +25,24 @@
 					<tr class="mobile_only">
 						<td class="w640" height="10" width="640"></td>
 					</tr>
-					<tr class="mobile_only">
-						<td class="w640" width="640" align="center">
-							<img class="mobile_only mobile-logo" border="0" src="{{ $logo['path'] }}" alt="{{ $senderName or '' }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
-						</td>
-					</tr>
-					<tr class="mobile_only">
-						<td class="w640" height="20" width="640"></td>
-					</tr>
+                    <tr class="mobile_only">
+                        <td class="w640" align="center" width="640">
+                            <table class="w640" border="0" cellpadding="0" cellspacing="0" width="640">
+                                <tr>
+                                    <td class="w30" width="30"></td>
+                                    <td valign="top" align="center">
+                                        <img class="mobile_only mobile-logo" border="0" src="{{ $logo['path'] }}" alt="{{ $senderName or '' }}" width="{{ $logo['width'] or '' }}" height="{{ $logo['height'] or '' }}" />
+                                    </td>
+                                    <td class="w30" width="30"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
 					<tr class="large_only">
 						<td class="w640"  height="20" width="640"></td>
 					</tr>
-
 					<tr>
 						<td class="w640" width="640" colspan="3" height="20"></td>
-					</tr>
-
-					<tr class="mobile_only">
-						<td class="w640"  height="10" width="640"></td>
-					</tr>
-					<tr class="mobile_only">
-						<td class="w640"  height="20" width="640"></td>
 					</tr>
 					<tr>
 						<td id="header" class="w640" align="center" width="640">

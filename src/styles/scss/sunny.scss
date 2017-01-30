@@ -69,7 +69,8 @@ $fontFamily: Helvetica Neue, Helvetica, Arial, Helvetica, serif;
 		font-size: 12px !important;
 
 	  &.mobile-logo {
-		  width: 40%;
+          max-width: 80%;
+          max-height: 60px !important;
 	  }
 	}
 
