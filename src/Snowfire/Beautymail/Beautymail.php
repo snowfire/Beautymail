@@ -77,6 +77,7 @@ class Beautymail implements Mailer
     /**
      * @param $view
      * @param array $data
+     *
      * @return \Illuminate\View\View
      */
     public function view($view, array $data = [])
@@ -89,8 +90,9 @@ class Beautymail implements Mailer
     /**
      * Send a new message when only a raw text part.
      *
-     * @param  string  $text
-     * @param  mixed  $callback
+     * @param string $text
+     * @param mixed  $callback
+     *
      * @return void
      */
     public function raw($text, $callback)
