@@ -38,6 +38,8 @@ When it's installed, add it to the providers list in `config/app.php`
 Publish assets to your public folder
 
     php artisan vendor:publish --provider="Snowfire\Beautymail\BeautymailServiceProvider"
+    
+Configure your settings such as logo url and social links in `config/beautymail.php`
 
 ## Send your first Beauty mail
 
