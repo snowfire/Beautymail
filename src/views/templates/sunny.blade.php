@@ -27,7 +27,7 @@
 					</tr>
                     <tr class="mobile_only">
                         <td class="w640" align="center" width="640">
-                            <table class="w640 mobile_only" border="0" cellpadding="0" cellspacing="0" width="640">
+                                <table class="w640" border="0" cellpadding="0" cellspacing="0" width="640">
                                 <tr class="mobile_only">
                                     <td class="w30" width="30"></td>
                                     <td valign="top" align="center">
