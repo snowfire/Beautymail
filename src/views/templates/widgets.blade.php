@@ -151,7 +151,7 @@
 												@endif
 
 												@if (isset($unsubscribe))
-													<p style="color:#c9c9c9;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{ $unsubscribe }}</p>
+													{{ $unsubscribe }}
 												@endif
 
 											</td>
@@ -161,6 +161,10 @@
 													<tr>
 														@if (isset($flickr))
 															<td><a href="https://www.flickr.com/photos/{{ $flickr }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/flickr.gif" width="42" height="32" alt="See our photos on Flickr"></a></td>
+														@endif
+														
+														@if (isset($github))
+															<td><a href="https://github.com/{{ $github }}"><img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/github.gif" width="42" height="32" alt="See our Github profile"></a></td>
 														@endif
 
 														@if (isset($twitter))
