@@ -111,7 +111,17 @@
 									<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="20" class="hide">
 									<br class="hide">
 									@if (isset($logo))
+
+										@if ( ! empty( $logo_link ) )
+											<a href="{{ $logo_link }}" target="_blank">
+										@endif
+
 										<img src="{{ $logo['path'] }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" alt="{{ $senderName or '' }}" style="-ms-interpolation-mode:bicubic;">
+
+										@if ( ! empty( $logo_link ) )
+											</a>
+										@endif
+
 									@endif
 									<br>
 									<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10" class="hide"><br class="hide"></td>

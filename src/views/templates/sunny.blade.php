@@ -31,8 +31,18 @@
                                 <tr class="mobile_only">
                                     <td class="w40" width="40"></td>
                                     <td class="w560" width="560" valign="top" align="center">
+
+										@if ( ! empty( $logo_link ) )
+											<a href="{{ $logo_link }}" target="_blank">
+										@endif
+
                                         <img class="mobile_only mobile-logo" border="0" src="{{ $logo['path'] }}" alt="{{ $senderName or '' }}" width="{{ $logo['width'] or '' }}" height="{{ $logo['height'] or '' }}" />
-                                    </td>
+
+										@if ( ! empty( $logo_link ) )
+											</a>
+										@endif
+
+									</td>
                                     <td class="w40" width="40"></td>
                                 </tr>
                             </table>
@@ -50,7 +60,17 @@
 								<tr>
 									<td class="w30" width="30"></td>
 									<td id="logo" width="{{ $logo['width'] }}" valign="top" align="center">
+
+										@if ( ! empty( $logo_link ) )
+											<a href="{{ $logo_link }}" target="_blank">
+										@endif
+
 										<img border="0" src="{{ $logo['path'] }}" alt="{{ $senderName or ''}}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
+
+										@if ( ! empty( $logo_link ) )
+											</a>
+										@endif
+
 									</td>
 									<td class="w30" width="30"></td>
 								</tr>
