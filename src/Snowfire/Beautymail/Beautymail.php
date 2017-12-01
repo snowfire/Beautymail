@@ -42,6 +42,11 @@ class Beautymail implements Mailer
     {
         return (new PendingMail($this))->bcc($users);
     }
+    
+    public function cc($users)
+    {
+        return (new PendingMail($this))->cc($users);
+    }
 
     /**
      * Retrieve the settings.
