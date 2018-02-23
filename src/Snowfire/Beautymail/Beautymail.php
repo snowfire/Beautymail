@@ -3,7 +3,6 @@
 namespace Snowfire\Beautymail;
 
 use Illuminate\Contracts\Mail\Mailer;
-use Illuminate\Mail\PendingMail;
 
 class Beautymail implements Mailer
 {
@@ -31,21 +30,6 @@ class Beautymail implements Mailer
         $this->settings = $settings;
         $this->mailer = app()->make('Illuminate\Contracts\Mail\Mailer');
         $this->setLogoPath();
-    }
-
-    public function to($users)
-    {
-        return (new PendingMail($this))->to($users);
-    }
-
-    public function bcc($users)
-    {
-        return (new PendingMail($this))->bcc($users);
-    }
-    
-    public function cc($users)
-    {
-        return (new PendingMail($this))->cc($users);
     }
 
     /**
@@ -89,7 +73,12 @@ class Beautymail implements Mailer
 
         $this->mailer->queue($view, $data, $callback);
     }
+    public function later($delay, $view, array $data, $callback, $queue = null)
+    {
+        $data = array_merge($this->settings, $data);
 
+        $this->mailer->later($delay, $view, $data, $callback, $queue = null);   
+    }
     /**
      * @param $view
      * @param array $data
