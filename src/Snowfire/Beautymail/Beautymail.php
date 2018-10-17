@@ -3,6 +3,7 @@
 namespace Snowfire\Beautymail;
 
 use Illuminate\Contracts\Mail\Mailer;
+use Illuminate\Mail\PendingMail;
 
 class Beautymail implements Mailer
 {
@@ -125,5 +126,20 @@ class Beautymail implements Mailer
             \Request::getSchemeAndHttpHost(),
             $this->settings['logo']['path']
         );
+    }
+    
+    public function to($users)	
+    {	
+        return (new PendingMail($this))->to($users);	
+    }
+    
+    public function bcc($users)	
+    {	
+        return (new PendingMail($this))->bcc($users);	
+    }	
+    	
+    public function cc($users)	
+    {	
+        return (new PendingMail($this))->cc($users);	
     }
 }
