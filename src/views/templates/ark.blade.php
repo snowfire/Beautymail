@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>{{ $senderName or '' }}</title>
+		<title>{{ $senderName ?? '' }}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<style type="text/css">{{ file_get_contents(app_path() . '/../vendor/snowfire/beautymail/src/styles/css/ark.css') }}</style>
 		@if($css)

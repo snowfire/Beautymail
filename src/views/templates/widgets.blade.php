@@ -92,7 +92,7 @@
 			}
 		}
 		
-		{{ $css or '' }}
+		{{ $css ?? '' }}
 	</style>
 </head>
 <body bgcolor="#e4e4e4" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" style="-webkit-font-smoothing: antialiased;width:100% !important;background:#e4e4e4;-webkit-text-size-adjust:none;">
