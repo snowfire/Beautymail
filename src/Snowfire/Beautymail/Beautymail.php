@@ -28,6 +28,7 @@ class Beautymail implements Mailer
     public function __construct($settings)
     {
         $this->settings = $settings;
+        $this->originalSettings = $this->settings;
         $this->mailer = app()->make('Illuminate\Contracts\Mail\Mailer');
         $this->setLogoPath();
     }
@@ -115,10 +116,21 @@ class Beautymail implements Mailer
      */
     private function setLogoPath()
     {
-        $this->settings['logo']['path'] = str_replace(
+        return $this->settings['logo']['path'] = str_replace(
             '%PUBLIC%',
             \Request::getSchemeAndHttpHost(),
             $this->settings['logo']['path']
         );
+    }
+
+    /**
+     * Changes logo related entry
+     * @param $field    string  path, width or height
+     * @param $value    string  value
+     * @return mixed
+     */
+    public function setLogo($field, $value)
+    {
+        return $this->settings['logo'][ $field ] = $value;
     }
 }
