@@ -5,112 +5,112 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width" name="viewport">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
-    <title>{{ $senderName or '' }}</title>
+    <title>{{ $senderName ?? '' }}</title>
     <style type="text/css">
     #outlook a {
         padding: 0;
     }
-    
+
     .ReadMsgBody {
         width: 100%;
     }
-    
+
     .ExternalClass {
         width: 100%;
     }
-    
+
     .ExternalClass {
         line-height: 100%;
     }
-    
+
     .ExternalClass p {
         line-height: 100%;
     }
-    
+
     .ExternalClass span {
         line-height: 100%;
     }
-    
+
     .ExternalClass font {
         line-height: 100%;
     }
-    
+
     .ExternalClass td {
         line-height: 100%;
     }
-    
+
     .ExternalClass div {
         line-height: 100%;
     }
-    
+
     body {
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
         font-family: 'Raleway', sans-serif;
         font-weight: 300;
     }
-    
+
     table {
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
         font-family: 'Raleway', sans-serif;
         font-weight: 300;
     }
-    
+
     td {
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
         font-family: 'Raleway', sans-serif;
         font-weight: 300;
     }
-    
+
     p {
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
         font-family: 'Raleway', sans-serif;
         font-weight: 300;
     }
-    
+
     a {
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
         font-family: 'Raleway', sans-serif;
         font-weight: 300;
     }
-    
+
     li {
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
         font-family: 'Raleway', sans-serif;
         font-weight: 300;
     }
-    
+
     blockquote {
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
         font-family: 'Raleway', sans-serif;
         font-weight: 300;
     }
-    
+
     table {
         mso-table-lspace: 0pt;
         mso-table-rspace: 0pt;
     }
-    
+
     td {
         mso-table-lspace: 0pt;
         mso-table-rspace: 0pt;
     }
-    
+
     img {
         -ms-interpolation-mode: bicubic;
     }
-    
+
     body {
         margin: 0;
         padding: 0;
     }
-    
+
     img {
         border: 0;
         height: auto;
@@ -118,32 +118,32 @@
         outline: none;
         text-decoration: none;
     }
-    
+
     table {
         border-collapse: collapse !important;
     }
-    
+
     body {
         height: 100% !important;
         margin: 0;
         padding: 0;
         width: 100% !important;
     }
-    
+
     #bodyTable {
         height: 100% !important;
         margin: 0;
         padding: 0;
         width: 100% !important;
     }
-    
+
     #bodyCell {
         height: 100% !important;
         margin: 0;
         padding: 0;
         width: 100% !important;
     }
-    
+
     @media only screen and (max-width: 640px) {
         body {
             width: auto!important;
@@ -170,7 +170,7 @@
             margin: 0 auto !important;
         }
     }
-    
+
     @media only screen and (max-width: 589px) {
         table[class="body"] .collapse {
             width: 100% !important;
@@ -195,7 +195,7 @@
         height: auto;
         padding-bottom: 20px;
         background-color: #eee;
-        overflow: visible;  
+        overflow: visible;
     }
     .doctor-image {
         /*margin: 0px 0 -10px 359px;
@@ -217,7 +217,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;        
+        flex-direction: column;
     }
     </style>
 </head>
@@ -244,7 +244,7 @@
                                                         </tr>
                                                     </table>
                                                 </td>
-                                            </tr>                                            
+                                            </tr>
                                             <tr>
                                                 <td height="20">&nbsp;</td>
                                             </tr>

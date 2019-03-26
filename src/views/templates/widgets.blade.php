@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>{{ $senderName or '' }}</title>
+	<title>{{ $senderName ?? '' }}</title>
 	<style>
 		a:hover {
 			text-decoration: underline !important;
@@ -91,8 +91,8 @@
 				font-size: 18px !important;
 			}
 		}
-		
-		{{ $css or '' }}
+
+		{{ $css ?? '' }}
 	</style>
 </head>
 <body bgcolor="#e4e4e4" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" style="-webkit-font-smoothing: antialiased;width:100% !important;background:#e4e4e4;-webkit-text-size-adjust:none;">
@@ -111,7 +111,7 @@
 									<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="20" class="hide">
 									<br class="hide">
 									@if (isset($logo))
-										<img src="{{ $logo['path'] }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" alt="{{ $senderName or '' }}" style="-ms-interpolation-mode:bicubic;">
+										<img src="{{ $logo['path'] }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" alt="{{ $senderName ?? '' }}" style="-ms-interpolation-mode:bicubic;">
 									@endif
 									<br>
 									<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10" class="hide"><br class="hide"></td>
@@ -174,7 +174,7 @@
 													</tr>
 												</table>
 
-												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10"><br><p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:bold;">{{ $senderName or '' }}</p>
+												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10"><br><p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:bold;">{{ $senderName ?? '' }}</p>
 
 												@if (isset($address))
 													<p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:normal;">

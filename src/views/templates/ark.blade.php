@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>{{ $senderName or '' }}</title>
+		<title>{{ $senderName ?? '' }}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<style type="text/css">{{ file_get_contents(app_path() . '/../vendor/snowfire/beautymail/src/styles/css/ark.css') }}</style>
 		@if($css)
@@ -24,7 +24,7 @@
 					</tr>
 					<tr class="mobile_only">
 						<td class="w640" width="640" align="center">
-							<img class="mobile_only" border="0" src="{{ $logo['path'] }}" alt="{{ $senderName or '' }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
+							<img class="mobile_only" border="0" src="{{ $logo['path'] }}" alt="{{ $senderName ?? '' }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
 						</td>
 					</tr>
 					<tr class="mobile_only">
@@ -42,7 +42,7 @@
 								<tr>
 									<td class="w20" width="20"></td>
 									<td id="logo" width="{{ $logo['width'] }}" valign="top">
-										<img border="0" src="{{ $logo['path'] }}" alt="{{ $senderName or ''}}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
+										<img border="0" src="{{ $logo['path'] }}" alt="{{ $senderName ?? ''}}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
 									</td>
 									<td class="w30" width="30"></td>
 								</tr>

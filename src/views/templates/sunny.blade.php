@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>{{ $senderName or '' }}</title>
+		<title>{{ $senderName ?? '' }}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<style type="text/css">{{ file_get_contents(app_path() . '/../vendor/snowfire/beautymail/src/styles/css/sunny.css') }}</style>
 		@if(isset($css))
@@ -31,7 +31,7 @@
                                 <tr class="mobile_only">
                                     <td class="w40" width="40"></td>
                                     <td class="w560" width="560" valign="top" align="center">
-                                        <img class="mobile_only mobile-logo" border="0" src="{{ $logo['path'] }}" alt="{{ $senderName or '' }}" width="{{ $logo['width'] or '' }}" height="{{ $logo['height'] or '' }}" />
+                                        <img class="mobile_only mobile-logo" border="0" src="{{ $logo['path'] }}" alt="{{ $senderName ?? '' }}" width="{{ $logo['width'] ?? '' }}" height="{{ $logo['height'] ?? '' }}" />
                                     </td>
                                     <td class="w40" width="40"></td>
                                 </tr>
@@ -50,7 +50,7 @@
 								<tr>
 									<td class="w30" width="30"></td>
 									<td id="logo" width="{{ $logo['width'] }}" valign="top" align="center">
-										<img border="0" src="{{ $logo['path'] }}" alt="{{ $senderName or ''}}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
+										<img border="0" src="{{ $logo['path'] }}" alt="{{ $senderName ?? ''}}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" />
 									</td>
 									<td class="w30" width="30"></td>
 								</tr>
