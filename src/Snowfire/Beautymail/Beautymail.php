@@ -57,6 +57,14 @@ class Beautymail implements Mailer
     {
         return $this->settings;
     }
+    
+    /**
+     * @return \Illuminate\Contracts\Mail\Mailer
+     */
+    public function getMailer()
+    {
+        return $this->mailer;
+    }
 
     /**
      * Send a new message using a view.
