@@ -19,5 +19,12 @@
             "Snowfire\\Beautymail\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snowfire\\Beautymail\\BeautymailServiceProvider"
+            ]
+        }
+    }
 }
