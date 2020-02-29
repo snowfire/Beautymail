@@ -15,7 +15,6 @@ class CssInlinerPlugin implements \Swift_Events_SendListener
     public function __construct()
     {
         $this->inliner = new \Pelago\Emogrifier();
-        $this->inliner->disableInvisibleNodeRemoval();
     }
 
     /**
