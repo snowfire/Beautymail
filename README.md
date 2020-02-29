@@ -37,7 +37,7 @@ __Sunny__
 
 Add the package to your `composer.json` by running:
 
-    composer require snowfire/beautymail dev-master
+    composer require snowfire/beautymail
 
 When it's installed, add it to the providers list in `config/app.php`
 
