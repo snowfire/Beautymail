@@ -58,17 +58,15 @@
 								<tr>
 									<td valign="middle" width="270" style="padding: 10px 0 10px 20px;" class="logo">
 										<div class="imgpop">
-
-											@if ( ! empty( $logo_link ) )
-												<a href="{{ $logo_link }}" target="_blank">
-													@endif
-
-													<a href="#"><img src="{{ $logo['path'] }}" alt="logo" border="0" style="display:block; border:none; outline:none; text-decoration:none;" st-image="edit" class="logo"></a>
-
-													@if ( ! empty( $logo_link ) )
-												</a>
+											@if (isset($logo))
+												@if ( ! empty( $logo['link'] ) )
+													<a href="{!! $logo['link'] !!}">
+												@endif
+														<img src="{{ array_key_exists('path', $logo) ? $logo['path'] : '' }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" height="{{ array_key_exists('height', $logo) ? $logo['height'] : '' }}" border="0" style="display:block; border:none; outline:none; text-decoration:none;" st-image="edit" class="logo">
+												@if ( ! empty( $logo['link'] ) )
+													</a>
+												@endif
 											@endif
-
 										</div>
 									</td>
 								</tr>
