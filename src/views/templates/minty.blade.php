@@ -4,9 +4,9 @@
 	<title></title>
 	<style type="text/css">{{ file_get_contents(app_path() . '/../vendor/snowfire/beautymail/src/styles/css/minty.css') }}</style>
 	@if($css)
-	<style type="text/css">
-		{{ $css }}
-	</style>
+		<style type="text/css">
+			{{ $css }}
+		</style>
 	@endif
 </head>
 <body>
@@ -26,7 +26,7 @@
 					<!-- Spacing -->
 					<tr>
 						<td align="right" valign="middle" style="font-family: Helvetica, arial, sans-serif; font-size: 10px;color: #999999" st-content="preheader">
-<!--							If you cannot read this email, please  <a class="hlite" href="#" style="text-decoration: none; color: {{ Config::get('beautymail.colors.highlight', '#004cad') }}">click here</a>-->
+						<!--							If you cannot read this email, please  <a class="hlite" href="#" style="text-decoration: none; color: {{ Config::get('beautymail.colors.highlight', '#004cad') }}">click here</a>-->
 						</td>
 					</tr>
 					<!-- Spacing -->
@@ -58,7 +58,17 @@
 								<tr>
 									<td valign="middle" width="270" style="padding: 10px 0 10px 20px;" class="logo">
 										<div class="imgpop">
-											<a href="#"><img src="{{ array_key_exists('path', $logo) ? $logo['path'] : '' }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" height="{{ array_key_exists('height', $logo) ? $logo['height'] : '' }}" border="0" style="display:block; border:none; outline:none; text-decoration:none;" st-image="edit" class="logo"></a>
+
+											@if ( ! empty( $logo_link ) )
+												<a href="{{ $logo_link }}" target="_blank">
+													@endif
+
+													<a href="#"><img src="{{ $logo['path'] }}" alt="logo" border="0" style="display:block; border:none; outline:none; text-decoration:none;" st-image="edit" class="logo"></a>
+
+													@if ( ! empty( $logo_link ) )
+												</a>
+											@endif
+
 										</div>
 									</td>
 								</tr>
@@ -107,11 +117,11 @@
 					</tr>
 					<!-- Spacing -->
 					@if ($unsubscribe)
-					<tr>
-						<td align="center" valign="middle" style="font-family: Helvetica, arial, sans-serif; font-size: 10px;color: #999999" st-content="preheader">
-							{{ $unsubscribe }}
-						</td>
-					</tr>
+						<tr>
+							<td align="center" valign="middle" style="font-family: Helvetica, arial, sans-serif; font-size: 10px;color: #999999" st-content="preheader">
+								{{ $unsubscribe }}
+							</td>
+						</tr>
 					@endif
 					<!-- Spacing -->
 					<tr>

@@ -29,6 +29,8 @@ return [
             'height' => '',
         ],
 
+        'logo_link' => null,
+
         'twitter'  => null,
         'facebook' => null,
         'flickr'   => null,

@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-	"http://www.w3.org/TR/html4/loose.dtd">
+		"http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>{{ isset($senderName) ? $senderName : '' }}</title>
+	<title>{{ $senderName or '' }}</title>
 	<style>
 		a:hover {
 			text-decoration: underline !important;
@@ -91,8 +91,8 @@
 				font-size: 18px !important;
 			}
 		}
-		
-		{{ isset($css) ? $css : '' }}
+
+		{{ $css or '' }}
 	</style>
 </head>
 <body bgcolor="#e4e4e4" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" style="-webkit-font-smoothing: antialiased;width:100% !important;background:#e4e4e4;-webkit-text-size-adjust:none;">
@@ -111,7 +111,17 @@
 									<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="20" class="hide">
 									<br class="hide">
 									@if (isset($logo))
-										<img src="{{ array_key_exists('path', $logo) ? $logo['path'] : '' }}" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" height="{{ array_key_exists('height', $logo) ? $logo['height'] : '' }}" alt="{{ isset($senderName) ? $senderName : '' }}" style="-ms-interpolation-mode:bicubic;">
+
+										@if ( ! empty( $logo_link ) )
+											<a href="{{ $logo_link }}" target="_blank">
+												@endif
+
+												<img src="{{ $logo['path'] }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}" alt="{{ $senderName or '' }}" style="-ms-interpolation-mode:bicubic;">
+
+												@if ( ! empty( $logo_link ) )
+											</a>
+										@endif
+
 									@endif
 									<br>
 									<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10" class="hide"><br class="hide"></td>
@@ -174,7 +184,7 @@
 													</tr>
 												</table>
 
-												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10"><br><p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:bold;">{{ isset($senderName) ? $senderName : '' }}</p>
+												<img border="0" src="{{ Request::getSchemeAndHttpHost() }}/vendor/beautymail/assets/images/widgets/spacer.gif" width="1" height="10"><br><p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:bold;">{{ $senderName or '' }}</p>
 
 												@if (isset($address))
 													<p style="color:#b3b3b3;font-size:11px;line-height:15px;font-family:Helvetica,Arial,sans-serif;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;font-weight:normal;">
