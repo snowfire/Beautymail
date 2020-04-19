@@ -156,4 +156,9 @@ class Beautymail implements Mailer
     {
         return $this->settings['logo'][ $field ] = $value;
     }
+
+    public function setLogoLink($link)
+    {
+        return $this->setLogo('link', $link);
+    }
 }

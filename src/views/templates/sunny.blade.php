@@ -33,7 +33,7 @@
 								<td class="w560" width="560" valign="top" align="center">
 									@if (isset($logo))
 										@if ( ! empty( $logo['link'] ) )
-											<a href="{!! $logo['link'] !!}">
+											<a href="{!! $logo['link'] !!}" target="_blank">
 												@endif
 												<img class="mobile_only mobile-logo" border="0" src="{{ array_key_exists('path', $logo) ? $logo['path'] : '' }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="{{ isset($logo) ? array_key_exists('width', $logo) ? $logo['width'] : '' : '' }}" height="{{ isset($logo) ? array_key_exists('height', $logo) ? $logo['height'] : '' : '' }}" />
 												@if ( ! empty( $logo['link'] ) )
@@ -58,7 +58,16 @@
 							<tr>
 								<td class="w30" width="30"></td>
 								<td id="logo" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" valign="top" align="center">
-									<img border="0" src="{{ array_key_exists('path', $logo) ? $logo['path'] : '' }}" alt="{{ isset($senderName) ? $senderName : ''}}" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" height="{{ array_key_exists('height', $logo) ? $logo['height'] : '' }}" />
+									@if (isset($logo))
+										@if ( ! empty( $logo['link'] ) )
+											<a href="{!! $logo['link'] !!}" target="_blank">
+												@endif
+										<img border="0" src="{{ array_key_exists('path', $logo) ? $logo['path'] : '' }}" alt="{{ isset($senderName) ? $senderName : ''}}" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" height="{{ array_key_exists('height', $logo) ? $logo['height'] : '' }}" />
+
+										@if ( ! empty( $logo['link'] ) )
+											</a>
+										@endif
+									@endif
 								</td>
 								<td class="w30" width="30"></td>
 							</tr>

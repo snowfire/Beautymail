@@ -50,7 +50,15 @@
 							<tr>
 								<td class="w20" width="20"></td>
 								<td id="logo" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" valign="top">
+									@if (isset($logo))
+										@if ( ! empty( $logo['link'] ) )
+											<a href="{!! $logo['link'] !!}">
+										@endif
 									<img border="0" src="{{ array_key_exists('path', $logo) ? $logo['path'] : '' }}" alt="{{ isset($senderName) ? $senderName : ''}}" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" height="{{ array_key_exists('height', $logo) ? $logo['height'] : '' }}" />
+										@if ( ! empty( $logo['link'] ) )
+											</a>
+										@endif
+									@endif
 								</td>
 								<td class="w30" width="30"></td>
 							</tr>

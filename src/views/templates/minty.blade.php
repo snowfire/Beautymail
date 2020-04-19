@@ -60,7 +60,7 @@
 										<div class="imgpop">
 											@if (isset($logo))
 												@if ( ! empty( $logo['link'] ) )
-													<a href="{!! $logo['link'] !!}">
+													<a href="{!! $logo['link'] !!}" target="_blank">
 												@endif
 														<img src="{{ array_key_exists('path', $logo) ? $logo['path'] : '' }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" height="{{ array_key_exists('height', $logo) ? $logo['height'] : '' }}" border="0" style="display:block; border:none; outline:none; text-decoration:none;" st-image="edit" class="logo">
 												@if ( ! empty( $logo['link'] ) )
