@@ -2,19 +2,11 @@
 
 namespace Snowfire\Beautymail;
 
+use Pelago\Emogrifier\CssInliner;
+
 class CssInlinerPlugin implements \Swift_Events_SendListener
 {
     
-    protected $inliner;
-
-    /**
-     * Initialize the CSS inliner.
-     */
-    public function __construct()
-    {
-        $this->inliner = new \Pelago\Emogrifier\CssInliner();
-    }
-
     /**
      * Inline the CSS before an email is sent.
      *
@@ -31,14 +23,14 @@ class CssInlinerPlugin implements \Swift_Events_SendListener
         ];
 
         if ($message->getBody() && in_array($message->getContentType(), $properTypes)) {
-            $this->inliner->setHtml($message->getBody());
-            $message->setBody($this->inliner->emogrify());
+            $html = CssInliner::fromHtml($message->getBody())->inlineCss()->render();
+            $message->setBody($html);
         }
 
         foreach ($message->getChildren() as $part) {
             if (strpos($part->getContentType(), 'text/html') === 0) {
-                $this->inliner->setHtml($part->getBody());
-                $message->setBody($this->inliner->emogrify());
+                $html = CssInliner::fromHtml($part->getBody())->inlineCss()->render();
+                $message->setBody($html);
             }
         }
     }
