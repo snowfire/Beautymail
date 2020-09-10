@@ -4,9 +4,7 @@ namespace Snowfire\Beautymail;
 
 class CssInlinerPlugin implements \Swift_Events_SendListener
 {
-    /**
-     * @var \Pelago\Emogrifier
-     */
+    
     protected $inliner;
 
     /**
@@ -14,7 +12,7 @@ class CssInlinerPlugin implements \Swift_Events_SendListener
      */
     public function __construct()
     {
-        $this->inliner = new \Pelago\Emogrifier();
+        $this->inliner = new \Pelago\Emogrifier\CssInliner();
     }
 
     /**
