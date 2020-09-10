@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=7.3.0",
         "pelago/emogrifier": "^4.0",
         "illuminate/support": "^8.0"
     },
