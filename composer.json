@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=7.3.0",
-        "pelago/emogrifier": "^4.0",
+        "pelago/emogrifier": "dev-master",
         "illuminate/support": "^8.0"
     },
     "autoload": {
@@ -19,7 +19,7 @@
             "Snowfire\\Beautymail\\": "src/"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "extra": {
         "laravel": {
             "providers": [
