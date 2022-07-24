@@ -6,7 +6,7 @@ use Pelago\Emogrifier\CssInliner;
 
 class CssInlinerPlugin implements \Swift_Events_SendListener
 {
-    
+
     /**
      * Inline the CSS before an email is sent.
      *
@@ -23,14 +23,16 @@ class CssInlinerPlugin implements \Swift_Events_SendListener
         ];
 
         if ($message->getBody() && in_array($message->getContentType(), $properTypes)) {
-            $html = CssInliner::fromHtml($message->getBody())->inlineCss()->render();
-            $message->setBody($html);
+            $message->setBody(
+                CssInliner::fromHtml($message->getBody())->inlineCss()->render()
+            );
         }
 
         foreach ($message->getChildren() as $part) {
             if (strpos($part->getContentType(), 'text/html') === 0) {
-                $html = CssInliner::fromHtml($part->getBody())->inlineCss()->render();
-                $message->setBody($html);
+                $message->setBody(
+                    CssInliner::fromHtml($part->getBody())->inlineCss()->render()
+                );
             }
         }
     }
