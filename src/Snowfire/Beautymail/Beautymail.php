@@ -147,8 +147,8 @@ class Beautymail implements Mailer
     }
 
     /**
-     * Changes logo related entry
-     * @param $field    string  path, width or height
+     * Changes logo related configuration entry
+     * @param $field    string  path, link, width or height
      * @param $value    string  value
      * @return mixed
      */
@@ -157,6 +157,9 @@ class Beautymail implements Mailer
         return $this->settings['logo'][ $field ] = $value;
     }
 
+    /**
+     * Sets the logo link in the configuration
+     */
     public function setLogoLink($link)
     {
         return $this->setLogo('link', $link);
