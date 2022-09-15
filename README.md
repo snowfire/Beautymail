@@ -39,11 +39,7 @@ Add the package to your `composer.json` by running:
 
     composer require snowfire/beautymail
 
-When it's installed, add it to the providers list in `config/app.php`
-
-	Snowfire\Beautymail\BeautymailServiceProvider::class,
-
-Publish assets to your public folder
+When it's installed, publish assets to your public folder
 
     php artisan vendor:publish --provider="Snowfire\Beautymail\BeautymailServiceProvider"
     
@@ -51,19 +47,19 @@ Configure your settings such as logo url and social links in `config/beautymail.
 
 ## Send your first Beauty mail
 
-Add this to your `routes.php`
+Add this to your `routes/web.php`
 
 ```php
 Route::get('/test', function()
 {
 	$beautymail = app()->make(Snowfire\Beautymail\Beautymail::class);
-    $beautymail->send('emails.welcome', [], function($message)
-    {
-        $message
+	$beautymail->send('emails.welcome', [], function($message)
+	{
+		$message
 			->from('bar@example.com')
 			->to('foo@example.com', 'John Smith')
 			->subject('Welcome!');
-    });
+	});
 
 });
 ```
