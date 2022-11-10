@@ -31,9 +31,9 @@ class BeautymailServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../views', 'beautymail');
 
         try {
-            $this->app['mailer']->getSwiftMailer()->registerPlugin(new CssInlinerPlugin());
+            $this->app['mailer']->getSymfonyMailer()->registerPlugin(new CssInlinerPlugin());
         } catch (\Exception $e) {
-            \Log::debug('Skipped registering SwiftMailer plugin: CssInlinerPlugin.');
+            \Log::debug('Skipped registering SymfonyMailer plugin: CssInlinerPlugin.');
         }
     }
 
