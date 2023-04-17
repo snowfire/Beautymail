@@ -2,6 +2,8 @@
 
 namespace Snowfire\Beautymail;
 
+use Illuminate\Mail\Events\MessageSending;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 
 class BeautymailServiceProvider extends ServiceProvider
@@ -30,10 +32,14 @@ class BeautymailServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../../views', 'beautymail');
 
-        try {
-            $this->app['mailer']->getSwiftMailer()->registerPlugin(new CssInlinerPlugin());
-        } catch (\Exception $e) {
-            \Log::debug('Skipped registering SwiftMailer plugin: CssInlinerPlugin.');
+        if (version_compare($this->app->version(), '9.0', '>=')) {
+            Event::listen('Illuminate\Mail\Events\MessageSending', 'Snowfire\Beautymail\SymfonyCssInlinerPlugin');
+        } else {
+            try {
+                $this->app['mailer']->getSwiftMailer()->registerPlugin(new SwiftCssInlinerPlugin());
+            } catch (\Exception $e) {
+                \Log::debug('Skipped registering SwiftMailer plugin: CssInlinerPlugin.');
+            }
         }
     }
 
