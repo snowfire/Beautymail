@@ -4,7 +4,7 @@ namespace Snowfire\Beautymail;
 
 use Pelago\Emogrifier\CssInliner;
 
-class CssInlinerPlugin implements \Swift_Events_SendListener
+class SwiftCssInlinerPlugin implements \Swift_Events_SendListener
 {
     /**
      * Inline the CSS before an email is sent.
