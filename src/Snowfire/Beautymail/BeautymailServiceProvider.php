@@ -32,6 +32,7 @@ class BeautymailServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../../views', 'beautymail');
 
+
         if (version_compare($this->app->version(), '9.0', '>=')) {
             Event::listen('Illuminate\Mail\Events\MessageSending', 'Snowfire\Beautymail\SymfonyCssInlinerPlugin');
         } else {
@@ -41,6 +42,7 @@ class BeautymailServiceProvider extends ServiceProvider
                 \Log::debug('Skipped registering SwiftMailer plugin: CssInlinerPlugin.');
             }
         }
+
     }
 
     /**
