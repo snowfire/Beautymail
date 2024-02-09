@@ -4,15 +4,25 @@ namespace Snowfire\Beautymail;
 
 use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Mail\PendingMail;
+use Illuminate\Support\Traits\Localizable;
 
 class Beautymail implements Mailer
 {
+    use Localizable;
+
     /**
      * Contains settings for emails processed by Beautymail.
      *
      * @var
      */
     private $settings;
+
+    /**
+     * The locale to use when sending.
+     *
+     * @var
+     */
+    private $locale;
 
     /**
      * The mailer contract depended upon.
@@ -42,10 +52,17 @@ class Beautymail implements Mailer
     {
         return (new PendingMail($this))->bcc($users);
     }
-    
+
     public function cc($users)
     {
         return (new PendingMail($this))->cc($users);
+    }
+
+    public function locale($locale)
+    {
+        $this->locale = $locale;
+
+        return $this;
     }
 
     /**
@@ -57,7 +74,7 @@ class Beautymail implements Mailer
     {
         return $this->settings;
     }
-    
+
     /**
      * @return \Illuminate\Contracts\Mail\Mailer
      */
@@ -79,7 +96,11 @@ class Beautymail implements Mailer
     {
         $data = array_merge($this->settings, $data);
 
-        $this->mailer->send($view, $data, $callback);
+        $mailer = $this->mailer;
+
+        $this->withLocale($this->locale, function () use ($mailer, $view, $data, $callback) {
+            $mailer->send($view, $data, $callback);
+        });
     }
 
     /**
