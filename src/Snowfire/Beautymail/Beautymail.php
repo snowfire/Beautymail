@@ -42,7 +42,7 @@ class Beautymail implements Mailer
     {
         return (new PendingMail($this))->bcc($users);
     }
-    
+
     public function cc($users)
     {
         return (new PendingMail($this))->cc($users);
@@ -57,7 +57,7 @@ class Beautymail implements Mailer
     {
         return $this->settings;
     }
-    
+
     /**
      * @return \Illuminate\Contracts\Mail\Mailer
      */
@@ -80,6 +80,20 @@ class Beautymail implements Mailer
         $data = array_merge($this->settings, $data);
 
         $this->mailer->send($view, $data, $callback);
+    }
+
+    /**
+     * Send a new message using a view.
+     *
+     * @param string|array    $view
+     * @param array           $data
+     * @param \Closure|string $callback
+     *
+     * @return void
+     */
+    public function sendNow($mailable, array $data = [], $callback = null)
+    {
+        $this->send($mailable, $data, $callback);
     }
 
     /**
