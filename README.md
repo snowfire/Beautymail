@@ -7,8 +7,6 @@ Beautymail makes it super easy to send beautiful responsive HTML emails. It's ma
 * Invoices
 * Data exports
 
-If you're on Laravel 4, use the `1.x` branch.
-
 ### Index:
 
 - [Templates](#templates)
@@ -19,7 +17,7 @@ If you're on Laravel 4, use the `1.x` branch.
 
 ## Templates
 
-There are tons of great looking HTML email templates out there. Campaign Monitor and Mailchimp has released hundreds for free. It is pretty simple to adapt a template to Beautymail. If you do, please send a PR.
+There are tons of great looking HTML email templates out there. Campaign Monitor and Mailchimp has released hundreds for free. It is pretty simple to adapt a template to Beautymail.
 
 __Widgets__ by [Campaign Monitor](https://www.campaignmonitor.com/templates/all/):
 
@@ -37,11 +35,9 @@ __Sunny__
 
 Add the package to your `composer.json` by running:
 
-    composer require snowfire/beautymail
-
-When it's installed, publish assets to your public folder
-
-    php artisan vendor:publish --provider="Snowfire\Beautymail\BeautymailServiceProvider"
+```bash
+composer require snowfire/beautymail
+```
     
 Configure your settings such as logo url and social links in `config/beautymail.php`
 
@@ -250,4 +246,4 @@ In order to get Beautymail working on Lumen you need to add the following to you
 
 ### Start using Beautymail
 
-Congratulations, you can know start using bBautmail in Lumen. See: [Send your first Beauty mail](#send-your-first-beauty-mail) on what to do next.
+Congratulations, you can know start using Beautymail in Lumen. See: [Send your first Beauty mail](#send-your-first-beauty-mail) on what to do next.

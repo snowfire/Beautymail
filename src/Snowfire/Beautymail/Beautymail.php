@@ -142,7 +142,12 @@ class Beautymail implements Mailer
         $this->settings['logo']['path'] = str_replace(
             '%PUBLIC%',
             \Request::getSchemeAndHttpHost(),
-            $this->settings['logo']['path']
+            $this->settings['logo']['path'] ?? ''
         );
+    }
+
+    public function sendNow($mailable, array $data = [], $callback = null)
+    {
+        return $this->mailer->sendNow($mailable, $data, $callback);
     }
 }

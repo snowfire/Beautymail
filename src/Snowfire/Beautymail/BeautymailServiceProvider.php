@@ -54,7 +54,7 @@ class BeautymailServiceProvider extends ServiceProvider
             function ($app) {
                 return new \Snowfire\Beautymail\Beautymail(
                     array_merge(
-                        config('beautymail.view'),
+                        config('beautymail.view', []),
                         [
                             'css' => !is_null(config('beautymail.css')) && count(config('beautymail.css')) > 0 ? implode(' ', config('beautymail.css')) : '',
                         ]
